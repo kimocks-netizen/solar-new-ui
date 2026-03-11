@@ -9,42 +9,42 @@ export default function EnergyConversionCard() {
       className="h-full"
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-slate-950/40">
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 transition-all duration-300 hover:scale-105 hover:shadow-md dark:border-white/10 dark:bg-slate-950/40 dark:hover:border-white/20">
+          <div className="flex items-center justify-between gap-2">
+            <div className="min-w-0 flex-1">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 CO₂ Saved
               </p>
-              <p className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              <p className="mt-1 text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
                 254.78 kg
               </p>
-              <p className="mt-1 text-sm text-emerald-600 dark:text-emerald-400">
+              <p className="mt-0.5 text-xs text-emerald-600 dark:text-emerald-400">
                 +8.4% this month
               </p>
             </div>
 
-            <div className="rounded-xl bg-emerald-50 p-3 dark:bg-emerald-500/10">
-              <Leaf className="h-6 w-6 text-emerald-600 dark:text-emerald-300" />
+            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-50 dark:bg-emerald-500/10">
+              <Leaf className="h-4 w-4 text-emerald-600 dark:text-emerald-300" />
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-slate-950/40">
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 transition-all duration-300 hover:scale-105 hover:shadow-md dark:border-white/10 dark:bg-slate-950/40 dark:hover:border-white/20">
+          <div className="flex items-center justify-between gap-2">
+            <div className="min-w-0 flex-1">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 Standard Coal Saved
               </p>
-              <p className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              <p className="mt-1 text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
                 102.20 kg
               </p>
-              <p className="mt-1 text-sm text-cyan-600 dark:text-cyan-400">
+              <p className="mt-0.5 text-xs text-cyan-600 dark:text-cyan-400">
                 Efficient operation
               </p>
             </div>
 
-            <div className="rounded-xl bg-cyan-50 p-3 dark:bg-cyan-500/10">
-              <Factory className="h-6 w-6 text-cyan-600 dark:text-cyan-300" />
+            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-cyan-50 dark:bg-cyan-500/10">
+              <Factory className="h-4 w-4 text-cyan-600 dark:text-cyan-300" />
             </div>
           </div>
         </div>

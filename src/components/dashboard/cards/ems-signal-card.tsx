@@ -15,12 +15,14 @@ export default function EmsSignalCard() {
             Strong
           </div>
 
-          <p className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-            92%
-          </p>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Signal quality
-          </p>
+          <div className="mt-4 flex items-baseline gap-2">
+            <p className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+              92%
+            </p>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Signal quality
+            </p>
+          </div>
         </div>
 
         <div className="rounded-xl bg-fuchsia-50 p-3 dark:bg-fuchsia-500/10">
@@ -29,13 +31,15 @@ export default function EmsSignalCard() {
       </div>
 
       <div className="mt-5 rounded-xl border border-slate-200 p-3 dark:border-white/10">
-        <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-          <Clock3 className="h-4 w-4" />
-          <span className="text-sm">Last updated</span>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+            <Clock3 className="h-4 w-4" />
+            <span className="text-sm">Last updated</span>
+          </div>
+          <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+            Today, 14:32
+          </p>
         </div>
-        <p className="mt-2 text-sm font-medium text-slate-900 dark:text-slate-100">
-          Today, 14:32
-        </p>
       </div>
     </SectionCard>
   );
