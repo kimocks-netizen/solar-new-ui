@@ -33,11 +33,11 @@ export default function AppTopbar({
   }, [showUserMenu]);
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between bg-slate-100/80 px-6 py-3 backdrop-blur-md dark:bg-[#071120]/80">
+    <header className="sticky top-0 z-30 flex items-center justify-between bg-slate-100/80 px-6 py-3 backdrop-blur-md dark:bg-slate-950/80">
       <div className="flex items-center gap-3">
         <button
           onClick={onMenuClick}
-          className="flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 transition hover:bg-slate-50 md:hidden dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+          className="flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 transition hover:bg-slate-50 md:hidden dark:border-white/10 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
           aria-label="Toggle menu"
         >
           <Menu className="h-5 w-5" />
@@ -58,7 +58,7 @@ export default function AppTopbar({
       <div className="flex items-center gap-3">
         <button
           type="button"
-          className="hidden items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 md:flex dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+          className="hidden items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 md:flex dark:border-white/10 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
         >
           <Search className="h-4 w-4" />
           Search
@@ -68,7 +68,7 @@ export default function AppTopbar({
 
         <button
           type="button"
-          className="relative rounded-xl border border-slate-200 bg-white p-2.5 text-slate-600 transition hover:bg-slate-50 dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+          className="relative rounded-xl border border-slate-200 bg-white p-2.5 text-slate-600 transition hover:bg-slate-50 dark:border-white/10 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
           aria-label="Notifications"
         >
           <Bell className="h-4 w-4" />
