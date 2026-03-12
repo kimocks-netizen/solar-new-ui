@@ -38,25 +38,25 @@ export default function PlatformStatusCard() {
 
           const toneClasses =
             item.tone === "cyan"
-              ? "bg-cyan-50 text-cyan-600 ring-cyan-100 dark:bg-cyan-500/10 dark:text-cyan-300 dark:ring-cyan-500/20"
+              ? "bg-[var(--ems-cyan-soft)] text-[var(--ems-cyan)] ring-[var(--ems-cyan)]/20"
               : item.tone === "magenta"
-              ? "bg-fuchsia-50 text-fuchsia-600 ring-fuchsia-100 dark:bg-fuchsia-500/10 dark:text-fuchsia-300 dark:ring-fuchsia-500/20"
-              : "bg-emerald-50 text-emerald-600 ring-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:ring-emerald-500/20";
+              ? "bg-[var(--ems-magenta-soft)] text-[var(--ems-magenta)] ring-[var(--ems-magenta)]/20"
+              : "bg-[var(--ems-success-soft)] text-[var(--ems-success)] ring-[var(--ems-success)]/20";
 
           return (
             <div
               key={item.label}
-              className="rounded-lg border border-slate-200 bg-slate-50 p-3 transition-all duration-300 hover:scale-105 hover:shadow-md dark:border-white/10 dark:bg-slate-950/40 dark:hover:border-white/20"
+              className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-3 transition-all duration-300 hover:scale-105 hover:shadow-md"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs opacity-60">
                     {item.label}
                   </p>
-                  <p className="mt-1 text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+                  <p className="mt-1 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
                     {item.value}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-0.5 text-xs opacity-60">
                     {item.subValue}
                   </p>
                 </div>

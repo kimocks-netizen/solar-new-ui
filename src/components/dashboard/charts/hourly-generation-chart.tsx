@@ -27,7 +27,7 @@ export default function HourlyGenerationChart() {
       title="Hourly Power Generation Trend Curve"
       className="h-full min-h-[400px]"
     >
-      <div className="h-[320px] rounded-lg bg-slate-50 p-3 dark:bg-slate-950/40">
+      <div className="h-[320px] rounded-lg bg-[var(--background)] p-3">
         {mounted ? (
           <ResponsiveContainer width="100%" height="100%" minHeight={200}>
             <LineChart data={hourlyGenerationData}>
@@ -65,7 +65,7 @@ export default function HourlyGenerationChart() {
             </LineChart>
           </ResponsiveContainer>
         ) : (
-          <div className="flex h-full items-center justify-center text-slate-400">
+          <div className="flex h-full items-center justify-center opacity-60">
             Loading chart...
           </div>
         )}
@@ -73,8 +73,8 @@ export default function HourlyGenerationChart() {
 
       <ChartLegend
         items={[
-          { label: "Today", colorClass: "bg-cyan-500 dark:bg-cyan-400" },
-          { label: "Yesterday", colorClass: "bg-fuchsia-500 dark:bg-fuchsia-400" },
+          { label: "Today", colorClass: "bg-[var(--ems-cyan)]" },
+          { label: "Yesterday", colorClass: "bg-[var(--ems-magenta)]" },
         ]}
       />
     </ChartCard>

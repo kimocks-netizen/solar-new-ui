@@ -16,16 +16,16 @@ export default function SectionCard({
   return (
     <section
       className={[
-        "rounded-lg border border-slate-200 bg-white p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300 dark:border-white/10 dark:bg-slate-900 dark:hover:border-white/20",
+        "rounded-lg border bg-[var(--card)] border-[var(--border)] p-3 shadow-sm transition-all duration-300 hover:shadow-md",
         className,
       ].join(" ")}
     >
       <div className="mb-2 flex items-center justify-between gap-3">
-        <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <h3 className="text-sm font-semibold text-[var(--foreground)]">
           {title}
         </h3>
         {subtitle ? (
-          <p className="text-xs text-slate-500 dark:text-slate-400">
+          <p className="text-xs opacity-60">
             {subtitle}
           </p>
         ) : null}

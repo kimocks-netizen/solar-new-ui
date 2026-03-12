@@ -6,7 +6,7 @@ type PageContainerProps = {
 
 export default function PageContainer({ children }: PageContainerProps) {
   return (
-    <main className="min-h-screen flex-1 bg-slate-100 dark:bg-[#071120]">
+    <main className="min-h-screen flex-1 bg-[var(--background)]">
       <div className="p-4">{children}</div>
     </main>
   );

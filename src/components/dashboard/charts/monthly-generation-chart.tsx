@@ -27,7 +27,7 @@ export default function MonthlyGenerationChart() {
       title="Monthly Generation"
       className="h-full min-h-[400px]"
     >
-      <div className="h-[320px] rounded-lg bg-slate-50 p-3 dark:bg-slate-950/40">
+      <div className="h-[320px] rounded-lg bg-[var(--background)] p-3">
         {mounted ? (
           <ResponsiveContainer width="100%" height="100%" minHeight={220}>
             <BarChart data={monthlyGenerationData} barGap={6}>
@@ -59,7 +59,7 @@ export default function MonthlyGenerationChart() {
             </BarChart>
           </ResponsiveContainer>
         ) : (
-          <div className="flex h-full items-center justify-center text-slate-400">
+          <div className="flex h-full items-center justify-center opacity-60">
             Loading chart...
           </div>
         )}
@@ -67,8 +67,8 @@ export default function MonthlyGenerationChart() {
 
       <ChartLegend
         items={[
-          { label: "This Month", colorClass: "bg-fuchsia-500 dark:bg-fuchsia-400" },
-          { label: "Last Month", colorClass: "bg-cyan-500 dark:bg-cyan-400" },
+          { label: "This Month", colorClass: "bg-[var(--ems-magenta)]" },
+          { label: "Last Month", colorClass: "bg-[var(--ems-cyan)]" },
         ]}
       />
     </ChartCard>

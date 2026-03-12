@@ -40,29 +40,15 @@ export default function AppTopbar({
     <header
       className={[
         "sticky top-0 z-30 flex items-center justify-between px-6 py-3 backdrop-blur-md",
-
-        /* Light mode topbar background
-           Use: soft floating header surface */
-        "bg-[#f6f8fb]/80",
-
-        /* Dark mode topbar background
-           Use: soft floating header surface in dark mode */
-        "dark:bg-[#071120]/80",
+        "bg-[var(--sidebar-bg)]/95 border-b border-[var(--border)]",
       ].join(" ")}
     >
       <div className="flex items-center gap-3">
         <button
           onClick={onMenuClick}
           className={[
-            "flex items-center justify-center rounded-lg border p-2 transition md:hidden",
-
-            /* Light mode button colours
-               Use: mobile menu button */
-            "border-slate-200 bg-white text-slate-600 hover:bg-slate-50",
-
-            /* Dark mode button colours
-               Use: mobile menu button in dark mode */
-            "dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800",
+            "flex items-center justify-center rounded-lg p-2.5 transition md:hidden",
+            "opacity-80 hover:bg-[var(--ems-cyan-soft)]/50 hover:opacity-100",
           ].join(" ")}
           aria-label="Toggle menu"
         >
@@ -72,15 +58,7 @@ export default function AppTopbar({
         <div>
           <h2
             className={[
-              "text-2xl font-semibold tracking-tight",
-
-              /* Light mode heading colour
-                 Use: page title */
-              "text-slate-900",
-
-              /* Dark mode heading colour
-                 Use: page title in dark mode */
-              "dark:text-slate-50",
+              "text-2xl font-semibold tracking-tight text-[var(--foreground)]",
             ].join(" ")}
           >
             {title}
@@ -89,15 +67,7 @@ export default function AppTopbar({
           {subtitle ? (
             <p
               className={[
-                "mt-1 hidden text-sm sm:block",
-
-                /* Light mode subtitle colour
-                   Use: page subtitle */
-                "text-slate-500",
-
-                /* Dark mode subtitle colour
-                   Use: page subtitle in dark mode */
-                "dark:text-slate-400",
+                "mt-1 hidden text-sm opacity-60 sm:block",
               ].join(" ")}
             >
               {subtitle}
@@ -111,14 +81,7 @@ export default function AppTopbar({
           type="button"
           className={[
             "hidden items-center gap-2 rounded-xl border px-3 py-2 text-sm transition md:flex",
-
-            /* Light mode search button
-               Use: desktop search action */
-            "border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100",
-
-            /* Dark mode search button
-               Use: desktop search action in dark mode */
-            "dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800",
+            "border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] opacity-80 hover:opacity-100 hover:bg-[var(--ems-cyan-soft)]",
           ].join(" ")}
         >
           <Search className="h-4 w-4" />
@@ -131,25 +94,14 @@ export default function AppTopbar({
           type="button"
           className={[
             "relative rounded-xl border p-2.5 transition",
-
-            /* Light mode notification button
-               Use: notification action */
-            "border-slate-200 bg-white text-slate-600 hover:bg-slate-50",
-
-            /* Dark mode notification button
-               Use: notification action in dark mode */
-            "dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800",
+            "border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] opacity-80 hover:opacity-100 hover:bg-[var(--ems-cyan-soft)]",
           ].join(" ")}
           aria-label="Notifications"
         >
           <Bell className="h-4 w-4" />
           <span
             className={[
-              "absolute right-2 top-2 h-2 w-2 rounded-full",
-
-              /* Magenta notification dot
-                 Use: unread notifications */
-              "bg-fuchsia-500",
+              "absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--ems-magenta)]",
             ].join(" ")}
           />
         </button>
@@ -159,10 +111,7 @@ export default function AppTopbar({
             onClick={() => setShowUserMenu(!showUserMenu)}
             className={[
               "flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white transition hover:opacity-90",
-
-              /* User avatar gradient
-                 Use: brand identity in header */
-              "bg-gradient-to-br from-cyan-500 to-fuchsia-500",
+              "bg-gradient-to-br from-[var(--ems-cyan)] to-[var(--ems-magenta)]",
             ].join(" ")}
           >
             BC

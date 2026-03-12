@@ -24,7 +24,7 @@ export default function EnergyNetwork() {
       subtitle="Real-time energy network overview"
       className="h-full"
     >
-      <div className="relative flex h-[520px] w-full items-center justify-center rounded-lg bg-slate-50 p-4 dark:bg-slate-950/40">
+      <div className="relative flex h-[520px] w-full items-center justify-center rounded-lg bg-[var(--background)] p-4">
         <Image
           src={theme === "dark" ? "/images/dashboard/energy-network-dark.png" : "/images/dashboard/energy-network-light.png"}
           alt="Energy Network"

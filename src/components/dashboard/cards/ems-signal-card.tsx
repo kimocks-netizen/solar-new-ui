@@ -61,7 +61,7 @@ export default function EmsSignalCard() {
               x="100"
               y="75"
               textAnchor="middle"
-              className="fill-slate-900 text-xl font-bold dark:fill-slate-100"
+              className="fill-[var(--foreground)] text-xl font-bold"
             >
               {signalValue}%
             </text>
@@ -93,7 +93,7 @@ export default function EmsSignalCard() {
                 cy="100"
                 r="8"
                 fill="currentColor"
-                className="text-slate-800 dark:text-slate-200"
+                className="text-[var(--foreground)] opacity-80"
               />
               {/* Center bolt - middle */}
               <circle
@@ -101,7 +101,7 @@ export default function EmsSignalCard() {
                 cy="100"
                 r="5"
                 fill="currentColor"
-                className="text-slate-600 dark:text-slate-400"
+                className="text-[var(--foreground)] opacity-60"
               />
               {/* Center bolt - inner */}
               <circle
@@ -109,14 +109,14 @@ export default function EmsSignalCard() {
                 cy="100"
                 r="2"
                 fill="currentColor"
-                className="text-slate-900 dark:text-slate-100"
+                className="text-[var(--foreground)]"
               />
             </g>
           </svg>
         </div>
 
         {/* Last updated */}
-        <div className="mt-1 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <div className="mt-1 flex items-center gap-2 text-xs opacity-60">
           <Clock3 className="h-3 w-3" />
           <span>Last updated: Today, 14:32</span>
         </div>

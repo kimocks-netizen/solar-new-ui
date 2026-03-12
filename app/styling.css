@@ -24,11 +24,11 @@
 
   /* Primary brand colour
      Use: active states, grid-related accents, chart series */
-  --ems-cyan: #0891b2;
+  --ems-cyan: #06b6d4;
 
   /* Primary brand soft background
      Use: subtle cyan badges, light tinted surfaces */
-  --ems-cyan-soft: #cffafe;
+  --ems-cyan-soft: #ecfeff;
 
   /* Secondary brand colour
      Use: comparison series, highlights, EV accents */
@@ -44,7 +44,7 @@
 
   /* Success soft background
      Use: success cards, pills, light highlights */
-  --ems-success-soft: #f0fdf4;
+  --ems-success-soft: #ecfdf5;
 
   /* Warning colour
      Use: caution, solar/power-generation accents if needed */
@@ -52,7 +52,7 @@
 
   /* Warning soft background
      Use: warning pills, solar-tinted panels */
-  --ems-warning-soft: #fef3c7;
+  --ems-warning-soft: #fffbeb;
 
   /* Info blue colour
      Use: heat pump / info states */
@@ -60,7 +60,7 @@
 
   /* Info blue soft background
      Use: info-tinted surfaces */
-  --ems-info-soft: #e0f2fe;
+  --ems-info-soft: #f0f9ff;
 
   /* Violet colour
      Use: BESS / battery accent */
@@ -68,23 +68,15 @@
 
   /* Violet soft background
      Use: battery cards */
-  --ems-violet-soft: #ede9fe;
+  --ems-violet-soft: #f5f3ff;
 
   /* Sidebar background
-     Use: left navigation background in light mode */
-  --sidebar-bg: #ffffff;
+     Use: left navigation background in both light and dark UI */
+  --sidebar-bg: #020617;
 
   /* Sidebar text colour
-     Use: sidebar default text in light mode */
-  --sidebar-text: #171717;
-
-  /* Gauge colors */
-  --gauge-red: #ef4444;
-  --gauge-red-dark: #dc2626;
-  --gauge-red-darker: #7f1d1d;
-  --gauge-orange: #f59e0b;
-  --gauge-yellow: #fbbf24;
-  --gauge-green: #10b981;
+     Use: sidebar default text */
+  --sidebar-text: #e2e8f0;
 }
 
 @theme inline {
@@ -104,7 +96,7 @@
 .dark {
   /* Main page background in DARK mode
      Use: overall dashboard background */
-  --background: #071120; /*#020617;*/
+  --background: #071120;
 
   /* Main text colour in DARK mode
      Use: default body text */
@@ -173,14 +165,6 @@
   /* Sidebar text in dark mode
      Use: left navigation text */
   --sidebar-text: #e2e8f0;
-
-  /* Gauge colors stay same in dark mode */
-  --gauge-red: #ef4444;
-  --gauge-red-dark: #dc2626;
-  --gauge-red-darker: #7f1d1d;
-  --gauge-orange: #f59e0b;
-  --gauge-yellow: #fbbf24;
-  --gauge-green: #10b981;
 }
 
 /* =========================================================

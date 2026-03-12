@@ -13,7 +13,7 @@ export default function ChartLegend({ items }: ChartLegendProps) {
       {items.map((item) => (
         <div key={item.label} className="flex items-center gap-2">
           <span className={`h-3 w-3 rounded-full ${item.colorClass}`} />
-          <span className="text-slate-600 dark:text-slate-300">{item.label}</span>
+          <span className="text-[var(--foreground)] opacity-80">{item.label}</span>
         </div>
       ))}
     </div>

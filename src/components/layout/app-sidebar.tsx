@@ -50,23 +50,24 @@ export default function AppSidebar({ mobileOpen = false, onMobileClose }: AppSid
       <aside
         ref={sidebarRef}
         className={[
-          "fixed left-0 top-0 z-50 flex h-screen flex-col border-r border-white/10 bg-slate-950 text-slate-100 transition-all duration-300",
+          "fixed left-0 top-0 z-50 flex h-screen flex-col border-r transition-all duration-300",
+          "bg-[var(--sidebar-bg)] text-[var(--sidebar-text)] border-[var(--border)]",
           "md:z-40",
           mobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0",
           isExpanded ? "w-[260px]" : "w-[260px] md:w-[72px]"
         ].join(" ")}>
       {/* Logo Section */}
-      <div className="border-b border-white/10 px-4 py-5">
+      <div className="border-b border-[var(--border)] px-4 py-5">
         <div className="flex items-center justify-between">
           {isExpanded || mobileOpen ? (
             <div className="flex-1">
-              <div className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-400">
+              <div className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--ems-cyan)]">
                 Smart Solar Energy
               </div>
-              <h1 className="mt-2 text-xl font-semibold tracking-tight">
+              <h1 className="mt-2 text-xl font-semibold tracking-tight text-[var(--sidebar-text)]">
                 EMS Dashboard
               </h1>
-              <p className="mt-1 text-sm text-slate-400">
+              <p className="mt-1 text-sm opacity-60">
                 Energy Management System
               </p>
             </div>
@@ -79,7 +80,7 @@ export default function AppSidebar({ mobileOpen = false, onMobileClose }: AppSid
           {mobileOpen && (
             <button
               onClick={onMobileClose}
-              className="flex items-center justify-center rounded-lg p-2 text-slate-400 transition hover:bg-white/5 hover:text-white md:hidden"
+              className="flex items-center justify-center rounded-lg p-2 opacity-60 transition hover:bg-white/5 hover:opacity-100 md:hidden"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
@@ -103,22 +104,22 @@ export default function AppSidebar({ mobileOpen = false, onMobileClose }: AppSid
                     "group relative flex items-center rounded-xl p-3 text-sm font-medium transition-all duration-200",
                     isExpanded || mobileOpen ? "gap-3" : "justify-center",
                     active
-                      ? "bg-cyan-500/15 text-cyan-300 ring-1 ring-cyan-400/30"
-                      : "text-slate-300 hover:bg-white/5 hover:text-white",
+                      ? "bg-[var(--ems-cyan-soft)] text-[var(--ems-cyan)] ring-2 ring-[var(--ems-cyan)] shadow-sm"
+                      : "opacity-80 hover:bg-[var(--ems-cyan-soft)]/50 hover:opacity-100",
                   ].join(" ")}
                 >
                   <Icon
                     className={[
                       "h-5 w-5 transition-colors",
                       active
-                        ? "text-cyan-300"
-                        : "text-slate-400 group-hover:text-cyan-300",
+                        ? "text-[var(--ems-cyan)]"
+                        : "opacity-60 group-hover:text-[var(--ems-cyan)] group-hover:opacity-100",
                     ].join(" ")}
                   />
                   {(isExpanded || mobileOpen) ? (
                     <span>{item.label}</span>
                   ) : (
-                    <span className="absolute left-full ml-2 hidden whitespace-nowrap rounded-lg bg-slate-900 px-3 py-2 text-sm font-medium text-white shadow-lg ring-1 ring-white/10 group-hover:block">
+                    <span className="absolute left-full ml-2 hidden whitespace-nowrap rounded-lg bg-[var(--card)] px-3 py-2 text-sm font-medium text-[var(--foreground)] shadow-lg ring-1 ring-[var(--border)] group-hover:block">
                       {item.label}
                     </span>
                   )}
@@ -130,10 +131,10 @@ export default function AppSidebar({ mobileOpen = false, onMobileClose }: AppSid
       </nav>
 
       {/* Bottom Section - Toggle Button */}
-      <div className="border-t border-white/10 px-3 py-4">
+      <div className="border-t border-[var(--border)] px-3 py-4">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex w-full items-center justify-center rounded-lg bg-slate-900/80 p-3 text-slate-300 ring-1 ring-white/10 transition hover:bg-slate-800 hover:text-cyan-300"
+          className="flex w-full items-center justify-center rounded-lg bg-[var(--card)] p-3 opacity-80 ring-1 ring-[var(--border)] transition hover:opacity-100 hover:text-[var(--ems-cyan)]"
           title={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
         >
           <div className="flex flex-col gap-1">
