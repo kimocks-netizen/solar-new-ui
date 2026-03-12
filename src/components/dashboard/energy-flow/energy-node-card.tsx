@@ -20,12 +20,12 @@ type EnergyNodeCardProps = {
 };
 
 const toneClasses: Record<EnergyNodeTone, string> = {
-  grid: "border-[var(--ems-cyan)]/30 bg-[var(--card)] dark:border-cyan-500/20",
-  bess: "border-[var(--ems-violet)]/30 bg-[var(--card)] dark:border-violet-500/20",
-  ev: "border-[var(--ems-success)]/30 bg-[var(--card)] dark:border-teal-500/20",
-  inverter: "border-[var(--ems-warning)]/30 bg-[var(--card)] dark:border-amber-500/20",
-  "heat-pump": "border-[var(--ems-info)]/30 bg-[var(--card)] dark:border-sky-500/20",
-  load: "border-[var(--ems-violet)]/30 bg-[var(--card)] dark:border-fuchsia-500/20",
+  grid: "border-[var(--border)] bg-[var(--card)]/60 backdrop-blur-xl",
+  bess: "border-[var(--border)] bg-[var(--card)]/60 backdrop-blur-xl",
+  ev: "border-[var(--border)] bg-[var(--card)]/60 backdrop-blur-xl",
+  inverter: "border-[var(--border)] bg-[var(--card)]/60 backdrop-blur-xl",
+  "heat-pump": "border-[var(--border)] bg-[var(--card)]/60 backdrop-blur-xl",
+  load: "border-[var(--border)] bg-[var(--card)]/60 backdrop-blur-xl",
 };
 
 export default function EnergyNodeCard({
@@ -38,8 +38,9 @@ export default function EnergyNodeCard({
   pulse = false,
   className = "",
 }: EnergyNodeCardProps) {
-  // Grid keeps size 76, all others get size 96
-  const imageSize = tone === "grid" ? 76 : 96;
+  // Grid keeps size 76, BESS/EV/Inverter get size 110, others get 96
+  const imageSize = tone === "grid" ? 76 : 
+                    (tone === "bess" || tone === "ev" || tone === "inverter") ? 110 : 96;
 
   return (
     <div className="relative">
@@ -57,7 +58,7 @@ export default function EnergyNodeCard({
       {/* Card content */}
       <div
         className={[
-          "flex w-[170px] flex-col items-center rounded-[24px] border px-4 pt-14 pb-4 text-center shadow-lg",
+          "flex w-[170px] flex-col items-center rounded-[24px] border px-4 pt-14 pb-4 text-center shadow-xl",
           toneClasses[tone],
           className,
         ].join(" ")}

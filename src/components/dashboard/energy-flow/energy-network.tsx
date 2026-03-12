@@ -67,7 +67,7 @@ export default function EnergyNetwork() {
         {/* ---------------- ASSETS ---------------- */}
 
         {/* Grid */}
-        <div className="absolute left-1/2 top-6 z-20 -translate-x-1/2">
+        <div className="absolute left-1/2 top-[60px] z-20 -translate-x-1/2">
           <EnergyNodeCard
             title="Import"
             value="6.2 kW"
@@ -144,11 +144,11 @@ export default function EnergyNetwork() {
             ↓
           </div>
 
-          <div className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          <div className="mt-2 text-sm text-[var(--foreground)] opacity-70">
             Total Load
           </div>
 
-          <div className="text-2xl font-semibold text-slate-900 dark:text-white">
+          <div className="text-2xl font-semibold text-[var(--foreground)]">
             6.2 kW
           </div>
 
@@ -159,10 +159,10 @@ export default function EnergyNetwork() {
         {/* Grid to house */}
         <PowerFlowLine
           color="cyan"
-          className="left-1/2 top-[132px] z-0 h-[120px] w-[4px] -translate-x-1/2"
+          className="left-1/2 top-[160px] z-0 h-[95px] w-[4px] -translate-x-1/2"
         />
 
-        <div className="absolute left-1/2 top-[150px] z-10 -translate-x-1/2 text-cyan-500 dark:text-cyan-400">
+        <div className="absolute left-1/2 top-[175px] z-10 -translate-x-1/2 text-cyan-500 dark:text-cyan-400">
           <div className="animate-bounce text-2xl">↓</div>
         </div>
 
@@ -246,8 +246,8 @@ export default function EnergyNetwork() {
           {/* Total Load */}
           <div className="flex flex-col items-center mb-4">
             <div className="text-3xl text-fuchsia-600 dark:text-fuchsia-400 animate-bounce">↓</div>
-            <div className="mt-1 text-xs text-slate-600 dark:text-slate-400">Total Load</div>
-            <div className="text-xl font-semibold text-slate-900 dark:text-white">6.2 kW</div>
+            <div className="mt-1 text-xs text-[var(--foreground)] opacity-70">Total Load</div>
+            <div className="text-xl font-semibold text-[var(--foreground)]">6.2 kW</div>
           </div>
 
           {/* Side Assets Grid */}
