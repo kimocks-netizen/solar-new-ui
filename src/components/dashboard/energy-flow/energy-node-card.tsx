@@ -20,12 +20,12 @@ type EnergyNodeCardProps = {
 };
 
 const toneClasses: Record<EnergyNodeTone, string> = {
-  grid: "border-cyan-200 bg-white dark:border-cyan-500/20 dark:bg-slate-900",
-  bess: "border-violet-200 bg-white dark:border-violet-500/20 dark:bg-slate-900",
-  ev: "border-teal-200 bg-white dark:border-teal-500/20 dark:bg-slate-900",
-  inverter: "border-amber-200 bg-white dark:border-amber-500/20 dark:bg-slate-900",
-  "heat-pump": "border-sky-200 bg-white dark:border-sky-500/20 dark:bg-slate-900",
-  load: "border-fuchsia-200 bg-white dark:border-fuchsia-500/20 dark:bg-slate-900",
+  grid: "border-[var(--ems-cyan)]/30 bg-[var(--card)] dark:border-cyan-500/20",
+  bess: "border-[var(--ems-violet)]/30 bg-[var(--card)] dark:border-violet-500/20",
+  ev: "border-[var(--ems-success)]/30 bg-[var(--card)] dark:border-teal-500/20",
+  inverter: "border-[var(--ems-warning)]/30 bg-[var(--card)] dark:border-amber-500/20",
+  "heat-pump": "border-[var(--ems-info)]/30 bg-[var(--card)] dark:border-sky-500/20",
+  load: "border-[var(--ems-violet)]/30 bg-[var(--card)] dark:border-fuchsia-500/20",
 };
 
 export default function EnergyNodeCard({
@@ -38,37 +38,47 @@ export default function EnergyNodeCard({
   pulse = false,
   className = "",
 }: EnergyNodeCardProps) {
-  return (
-    <div
-      className={[
-        "flex w-[170px] flex-col items-center rounded-[24px] border px-4 py-4 text-center shadow-[0_10px_30px_rgba(15,23,42,0.08)]",
-        toneClasses[tone],
-        className,
-      ].join(" ")}
-    >
-      <EnergyAssetVisual
-        src={imageSrc}
-        alt={title}
-        size={76}
-        glow={glow}
-        pulse={pulse}
-      />
+  // Grid keeps size 76, all others get size 96
+  const imageSize = tone === "grid" ? 76 : 96;
 
-      <p className="mt-3 text-sm font-medium text-slate-800 dark:text-slate-200">
+  return (
+    <div className="relative">
+      {/* Image positioned to overflow at top */}
+      <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2">
+        <EnergyAssetVisual
+          src={imageSrc}
+          alt={title}
+          size={imageSize}
+          glow={glow}
+          pulse={pulse}
+        />
+      </div>
+
+      {/* Card content */}
+      <div
+        className={[
+          "flex w-[170px] flex-col items-center rounded-[24px] border px-4 pt-14 pb-4 text-center shadow-lg",
+          toneClasses[tone],
+          className,
+        ].join(" ")}
+      >
+
+      <p className="mt-1 text-sm font-medium text-[var(--foreground)]">
         {title}
       </p>
 
       {value ? (
-        <p className="mt-1 text-[20px] font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+        <p className="mt-1 text-[20px] font-semibold tracking-tight text-[var(--foreground)]">
           {value}
         </p>
       ) : null}
 
       {subtitle ? (
-        <div className="mt-2 rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+        <div className="mt-2 rounded-full bg-slate-200/60 px-3 py-1 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-300">
           {subtitle}
         </div>
       ) : null}
+      </div>
     </div>
   );
 }
