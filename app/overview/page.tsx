@@ -39,11 +39,11 @@ export default function OverviewPage() {
               {/* Left Column - 4 Status Cards */}
               <div className="grid grid-cols-1 gap-4 lg:col-span-5">
                 <PlatformStatusCard />
-                <EnergyConversionCard />
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <WeatherCard />
+                  <EnergyConversionCard />
                   <EMSSignalCard />
                 </div>
+                <WeatherCard />
               </div>
 
               {/* Right Column - Energy Flow */}

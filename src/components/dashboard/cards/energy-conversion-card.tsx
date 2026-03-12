@@ -5,7 +5,6 @@ export default function EnergyConversionCard() {
   return (
     <SectionCard
       title="Energy Conversion"
-      subtitle="Overall environmental impact"
       className="h-full"
     >
       <div className="grid gap-4 sm:grid-cols-2">
@@ -33,7 +32,7 @@ export default function EnergyConversionCard() {
           <div className="flex items-center justify-between gap-2">
             <div className="min-w-0 flex-1">
               <p className="text-xs opacity-60">
-                Standard Coal Saved
+                Coal Saved
               </p>
               <p className="mt-1 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
                 102.20 kg

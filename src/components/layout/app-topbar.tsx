@@ -17,6 +17,7 @@ export default function AppTopbar({
   onMenuClick,
 }: AppTopbarProps) {
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,11 +37,25 @@ export default function AppTopbar({
     };
   }, [showUserMenu]);
 
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 10);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header
       className={[
-        "sticky top-0 z-30 flex items-center justify-between px-6 py-3 backdrop-blur-md",
-        "bg-[var(--sidebar-bg)]/95 border-b border-[var(--border)]",
+        "sticky top-0 z-30 flex items-center justify-between px-6 py-3 transition-all duration-300",
+        "border-b border-[var(--border)]",
+        isScrolled
+          ? "bg-[var(--sidebar-bg)]/80 backdrop-blur-lg shadow-sm"
+          : "bg-[var(--sidebar-bg)]",
       ].join(" ")}
     >
       <div className="flex items-center gap-3">

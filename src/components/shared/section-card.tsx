@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 type SectionCardProps = {
   title: string;
-  subtitle?: string;
+  subtitle?: string | ReactNode;
   children: ReactNode;
   className?: string;
 };
@@ -25,9 +25,9 @@ export default function SectionCard({
           {title}
         </h3>
         {subtitle ? (
-          <p className="text-xs opacity-60">
+          <div className="text-xs opacity-60">
             {subtitle}
-          </p>
+          </div>
         ) : null}
       </div>
 
