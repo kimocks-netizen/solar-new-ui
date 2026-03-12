@@ -53,9 +53,13 @@ export default function OverviewPage() {
             </div>
 
             {/* Bottom Row - Charts */}
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-              <HourlyGenerationChart />
-              <MonthlyGenerationChart />
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
+              <div className="lg:col-span-5">
+                <HourlyGenerationChart />
+              </div>
+              <div className="lg:col-span-7">
+                <MonthlyGenerationChart />
+              </div>
             </div>
           </div>
         </PageContainer>

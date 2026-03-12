@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --gauge-red: #ef4444;
+  --gauge-red-dark: #dc2626;
+  --gauge-red-darker: #7f1d1d;
+  --gauge-orange: #f59e0b;
+  --gauge-yellow: #fbbf24;
+  --gauge-green: #10b981;
 }
 
 @theme inline {
@@ -16,6 +22,12 @@
   :root {
     --background: #020617;
     --foreground: #ededed;
+    --gauge-red: #ef4444;
+    --gauge-red-dark: #dc2626;
+    --gauge-red-darker: #7f1d1d;
+    --gauge-orange: #f59e0b;
+    --gauge-yellow: #fbbf24;
+    --gauge-green: #10b981;
   }
 }
 

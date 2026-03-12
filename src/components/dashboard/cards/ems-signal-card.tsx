@@ -1,44 +1,124 @@
-import { Wifi, WifiHigh, Clock3 } from "lucide-react";
+"use client";
+
+import { Clock3 } from "lucide-react";
 import SectionCard from "@/components/shared/section-card";
 
 export default function EmsSignalCard() {
+  const signalValue = 91;
+  // Semi-circle: -90 to +90 degrees (180 degrees total)
+  const rotation = -90 + (signalValue / 100) * 180;
+
   return (
     <SectionCard
       title="EMS Signal Strength"
-      subtitle="Communication quality and last refresh"
+      subtitle="Communication quality"
       className="h-full"
     >
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
-            <WifiHigh className="h-4 w-4" />
-            Strong
-          </div>
-
-          <div className="mt-4 flex items-baseline gap-2">
-            <p className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-              92%
-            </p>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Signal quality
-            </p>
-          </div>
+      <div className="flex flex-col items-center justify-center py-2">
+        {/* Gauge */}
+        <div className="relative h-36 w-full">
+          <svg className="h-full w-full" viewBox="0 0 200 120">
+            <defs>
+              {/* Gradient from red to yellow to green */}
+              <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ef4444" />
+                <stop offset="40%" stopColor="#f59e0b" />
+                <stop offset="70%" stopColor="#fbbf24" />
+                <stop offset="100%" stopColor="#10b981" />
+              </linearGradient>
+              {/* Glossy effect */}
+              <radialGradient id="glossy">
+                <stop offset="0%" stopColor="white" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="transparent" />
+              </radialGradient>
+              {/* Needle gradient */}
+              <linearGradient id="needleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#dc2626" />
+                <stop offset="100%" stopColor="#7f1d1d" />
+              </linearGradient>
+            </defs>
+            
+            {/* Main semi-circle arc with gradient */}
+            <path
+              d="M 20 100 A 80 80 0 0 1 180 100"
+              fill="none"
+              stroke="url(#gaugeGradient)"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
+            
+            {/* Glossy overlay */}
+            <path
+              d="M 20 100 A 80 80 0 0 1 180 100"
+              fill="none"
+              stroke="url(#glossy)"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
+            
+            {/* Center value */}
+            <text
+              x="100"
+              y="75"
+              textAnchor="middle"
+              className="fill-slate-900 text-xl font-bold dark:fill-slate-100"
+            >
+              {signalValue}%
+            </text>
+            
+            {/* Needle/Pointer */}
+            <g transform={`rotate(${rotation} 100 100)`} className="transition-transform duration-1000 ease-out">
+              {/* Needle shadow */}
+              <path
+                d="M 96 100 L 100 30 L 104 100 Z"
+                fill="#000000"
+                opacity="0.15"
+                transform="translate(1, 1)"
+              />
+              {/* Needle */}
+              <path
+                d="M 96 100 L 100 30 L 104 100 Z"
+                fill="url(#needleGradient)"
+              />
+              {/* Needle tip */}
+              <circle
+                cx="100"
+                cy="30"
+                r="3"
+                fill="#dc2626"
+              />
+              {/* Center bolt - outer */}
+              <circle
+                cx="100"
+                cy="100"
+                r="8"
+                fill="currentColor"
+                className="text-slate-800 dark:text-slate-200"
+              />
+              {/* Center bolt - middle */}
+              <circle
+                cx="100"
+                cy="100"
+                r="5"
+                fill="currentColor"
+                className="text-slate-600 dark:text-slate-400"
+              />
+              {/* Center bolt - inner */}
+              <circle
+                cx="100"
+                cy="100"
+                r="2"
+                fill="currentColor"
+                className="text-slate-900 dark:text-slate-100"
+              />
+            </g>
+          </svg>
         </div>
 
-        <div className="rounded-xl bg-fuchsia-50 p-3 dark:bg-fuchsia-500/10">
-          <Wifi className="h-6 w-6 text-fuchsia-600 dark:text-fuchsia-300" />
-        </div>
-      </div>
-
-      <div className="mt-5 rounded-xl border border-slate-200 p-3 dark:border-white/10">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-            <Clock3 className="h-4 w-4" />
-            <span className="text-sm">Last updated</span>
-          </div>
-          <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
-            Today, 14:32
-          </p>
+        {/* Last updated */}
+        <div className="mt-1 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <Clock3 className="h-3 w-3" />
+          <span>Last updated: Today, 14:32</span>
         </div>
       </div>
     </SectionCard>
